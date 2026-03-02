@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 23.75rem;
+  height: 2.8125rem;
+  padding: 0rem 0.9375rem;
+  user-select: none;
+}
+
+.wrapper:hover {
+background-color:  rgba(66, 81, 96, 0.15);
+cursor: pointer;
+}

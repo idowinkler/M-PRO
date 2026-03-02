@@ -1,29 +1,32 @@
 import React from "react";
-import Style from "./MapStateBar.module.css";
 import { MapStateEntity } from "../../types/MapStateEntity";
-import exitIcon from "../../assets/exit.svg";
+import homeIcon from "../../assets/home.svg";
+import Bar from "../Bar/Bar";
+import Style from "./MapStateBar.module.css";
+import VerticalDivider from "../VerticalDivider/VerticalDivider";
 
 export interface MapStateBarProps {
   mapState: MapStateEntity;
 }
 
 export const MapStateBar: React.FC<MapStateBarProps> = ({ mapState }) => {
-  return (
-    <div className={Style.bar}>
+  const nonDefaultMapIconClass = `${Style.icon} ${Style.favoriteIcon} ${
+            mapState.isFavorite ? Style.favorite : ""
+          } ${mapState.isHome ? Style.homeIcon : ''}`
+
+  return <Bar>      
       <div className={Style.mapStateInfo}>
         <div
-          className={`${Style.icon} ${Style.favoriteIcon} ${
-            mapState.isFavorite ? Style.favorite : ""
-          }`}
+          className={mapState.isMyMap ? `${Style.icon} ${Style.usersIcon}` : nonDefaultMapIconClass }
           // TODO in TS
           // onClick={onToggle}
         />
-        <div className={Style.seperator} />
+        {mapState.isVerticalDeviderShown && <VerticalDivider />}
         <div className={Style.name}>{mapState.name}</div>
       </div>
-      <img src={exitIcon} className={Style.icon} />
-    </div>
-  );
-};
+      {mapState.isHome && <img src={homeIcon} className={Style.icon} />}
+      </Bar>
+}
+;
 
 export default MapStateBar;

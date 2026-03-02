@@ -1,0 +1,9 @@
+.wrapper {
+    width: 3.125rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rightArrow {
+    rotate: 180deg;
+}
