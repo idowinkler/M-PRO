@@ -65,6 +65,7 @@ isViewed: true,
       <MapStateListElement mapState={{...selectedMapState3, isVerticalDeviderShown: false}} isDocSign={false}/>
       </div>
       <button className={Style.saveStateButton}>שמירה וניהול מצבים</button>
+      {/*eveything else needed for this button already exists in ts (border, icon with plus) */}
 
       <div className={Style.favoritesIndicator}></div>
     </div>

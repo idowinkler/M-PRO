@@ -20,7 +20,7 @@ export const MapStateBar: React.FC<MapStateBarProps> = ({ mapState }) => {
                 <div className={mapState.isMyMap ? Style.usersIcon : nonMyMapIconClass} />                
                 {mapState.isVerticalDeviderShown && <VerticalDivider />}
                 
-                {mapState.isViewed && <UnviewedEntityIndicator />}
+                {!mapState.isViewed && <UnviewedEntityIndicator />}
                 <div className={Style.name}>{mapState.name}</div>
             </div>
 
