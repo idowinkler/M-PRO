@@ -1,7 +1,7 @@
 .wrapper {
-    width: 3.125rem;
     display: flex;
     justify-content: space-between;
+    width: 3.125rem;
 }
 
 .rightArrow {

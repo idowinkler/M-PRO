@@ -47,11 +47,12 @@ isViewed: true,
     isVerticalDeviderShown: true,
 isViewed: true,
   };
-  //To the my map item we only need to add the switcher, cause everything else exists in the realitiesSelection component.
-
+  
   return (
     <div className={Style.app}>
       <Bar extraClass={Style.wrapper}><MapStateSwitcher onClick={() => {}}/><div>עינב</div></Bar>
+      {/* To the my map item we only need to add the switcher, cause everything else exists in the realitiesSelection component.*/}
+
       <div className={Style.wrapper} style={{width: '23.75rem'}}>
       <MapStateBar mapState={selectedMapState4} />
       <MapStateBar mapState={selectedMapState} />
@@ -67,7 +68,7 @@ isViewed: true,
 
       <div className={Style.favoritesIndicator}></div>
     </div>
-    //saveStateButton icon and other css settings are already exist in our code
+    //everything here (not the components used), and in the css, should not be reviewed for it wont whiten :);
   );
 };
 

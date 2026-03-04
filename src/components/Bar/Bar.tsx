@@ -15,4 +15,6 @@ const Bar: React.FC<BarProps> = ({ children, extraClass }) => {
   ); 
 };
 
+//This componet only helped me for the ui here, in the ts it will be united with the map state bar component (itll be the children)
+
 export default Bar;

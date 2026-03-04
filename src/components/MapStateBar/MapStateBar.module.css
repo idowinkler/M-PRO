@@ -16,7 +16,6 @@
 }
 
 .favoriteIcon {
-  @apply transition-all;
   cursor: pointer;
   background-image: url("../../assets/hollowHeart.svg");
   background-repeat: no-repeat;
@@ -39,11 +38,9 @@
   background-image: url("../../assets/hollowHeart.svg");
 }
 
-.favoriteIcon.homeIcon {
+.favoriteIcon.homeFavoriteIcon {
   opacity: 0.4;
 }
-
-
 
 .name {
   max-width: 17rem;
@@ -58,9 +55,4 @@
   height: 1.125rem;
   margin-top: 0.2rem;
   margin-right: 0.07rem;
-}
-
-.unviewedIndicator {
-  color: rgba(72, 215, 208, 1);
-
 }

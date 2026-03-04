@@ -12,5 +12,6 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({onClick, className}) =>
     <img src={arrowIcon} className={className}/> 
 </button>
  //Will be swap by IconButton
+ //Ive created it because with this new addition there are like 5 instances in our project of icon button with this icon
 
 export default ArrowButton
