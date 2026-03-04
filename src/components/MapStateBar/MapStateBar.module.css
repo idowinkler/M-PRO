@@ -59,3 +59,8 @@
   margin-top: 0.2rem;
   margin-right: 0.07rem;
 }
+
+.unviewedIndicator {
+  color: rgba(72, 215, 208, 1);
+
+}

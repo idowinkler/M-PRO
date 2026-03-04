@@ -1,8 +1,9 @@
-export interface MapStateEntity {
+export type MapStateEntity = {
   id: number;
   name: string;
-  isFavorite: boolean;
   isHome: boolean;
   isMyMap: boolean;
   isVerticalDeviderShown: boolean;
-}
+} & (| {isViewed: false; isFavorite: false} 
+     | {isViewed: true; isFavorite: boolean})
+

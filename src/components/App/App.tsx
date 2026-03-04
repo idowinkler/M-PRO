@@ -14,15 +14,16 @@ export const App: React.FC = ({}) => {
     isHome: true,
     isMyMap: false,
 isVerticalDeviderShown: true,
-
+isViewed: true,
   };
    const selectedMapState2: MapStateEntity = {
     id: 1,
     name: "מצב שמור בהחלט ארוך ארוך ארוך ארוך ארוך",
     isFavorite: false,
-    isHome: false,
+    isHome: true,
     isMyMap: false,
 isVerticalDeviderShown: true,
+isViewed: true,
 
   };
 
@@ -33,6 +34,8 @@ isVerticalDeviderShown: true,
     isHome: false,
     isMyMap: false,
 isVerticalDeviderShown: true,
+isViewed: true,
+
   };
 
    const selectedMapState4: MapStateEntity = {
@@ -42,9 +45,9 @@ isVerticalDeviderShown: true,
     isHome: false,
     isMyMap: true,
     isVerticalDeviderShown: true,
-
+isViewed: true,
   };
-  //הדבר היחיד שצריך להוסיף הוא הכפתורים קדימה ואחורה, השאר קיים בתוך קומפוננטת realitiesSelection
+  //To the my map item we only need to add the switcher, cause everything else exists in the realitiesSelection component.
 
   return (
     <div className={Style.app}>
@@ -57,10 +60,12 @@ isVerticalDeviderShown: true,
       </div>
       <div className={Style.wrapper} style={{width: '55rem'}}>
       <MapStateListElement mapState={{...selectedMapState, isVerticalDeviderShown: false}} isDocSign/>
-      <MapStateListElement mapState={{...selectedMapState2, isVerticalDeviderShown: false}} isDocSign/>
+      <MapStateListElement mapState={{...selectedMapState2, isVerticalDeviderShown: false, isViewed: false, isFavorite: false, isHome: false}} isDocSign/>
       <MapStateListElement mapState={{...selectedMapState3, isVerticalDeviderShown: false}} isDocSign={false}/>
       </div>
       <button className={Style.saveStateButton}>שמירה וניהול מצבים</button>
+
+      <div className={Style.favoritesIndicator}></div>
     </div>
     //saveStateButton icon and other css settings are already exist in our code
   );

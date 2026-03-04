@@ -22,6 +22,7 @@ export const MapStateBar: React.FC<MapStateBarProps> = ({ mapState }) => {
           // onClick={onToggle}
         />
         {mapState.isVerticalDeviderShown && <VerticalDivider />}
+        {!mapState.isViewed && <p className={Style.unviewedIndicator}>[חדש]</p>}
         <div className={Style.name}>{mapState.name}</div>
       </div>
       {mapState.isHome && <img src={homeIcon} className={Style.icon} />}

@@ -12,12 +12,15 @@
     
 }
 
-.creatorIndication {
+
+.creator {
+    display: flex;
     width: 19.25rem;
+    font-size: 0.875rem;
 }
 
 .creatorName {
-    width: 12rem;
+    max-width: 12rem;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
