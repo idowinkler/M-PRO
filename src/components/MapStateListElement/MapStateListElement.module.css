@@ -1,6 +1,5 @@
 .container {
     width: 55rem;
-    height: 3.75rem;
     display: flex;
     align-items: center;
     gap: 0 0.9rem;
@@ -9,13 +8,17 @@
 .docIcon {
     width: 1.125rem;
     height: 1.125rem;
-    
 }
+
+.creationDetails {
+    font-size: 0.875rem;
+    color: rgba(189, 189, 189, 1);
+}
+/* This should've been like this i mistook in previous branch */
 
 .creator {
     display: flex;
     width: 19.25rem;
-    font-size: 0.875rem;
     gap: 0 0.5rem;
 }
 

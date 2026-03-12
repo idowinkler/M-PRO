@@ -4,6 +4,7 @@ import { MapStateEntity } from "../../types/MapStateEntity";
 import MapStateSwitcher from "../MapStateSwitcher/MapStateSwitcher";
 import Bar from "../Bar/Bar";
 import Style from "./App.module.css";
+import SortableList from "../SortableList/SortableList";
 import MapStateListElement from "../MapStateListElement/MapStateListElement";
 
 export const App: React.FC = ({}) => {
@@ -17,7 +18,7 @@ isVerticalDeviderShown: true,
 isViewed: true,
   };
    const selectedMapState2: MapStateEntity = {
-    id: 1,
+    id: 2,
     name: "מצב שמור בהחלט ארוך ארוך ארוך ארוך ארוך",
     isFavorite: false,
     isHome: true,
@@ -28,7 +29,7 @@ isViewed: true,
   };
 
    const selectedMapState3: MapStateEntity = {
-    id: 1,
+    id: 3,
     name: "מצב שמור בהחלט ארוך ארוך ארוך ארוך ארוך",
     isFavorite: true,
     isHome: false,
@@ -59,10 +60,11 @@ isViewed: true,
       <MapStateBar mapState={selectedMapState3} />
       <MapStateBar mapState={selectedMapState4} />
       </div>
-      <div className={Style.wrapper} style={{width: '55rem'}}>
-      <MapStateListElement mapState={{...selectedMapState, isVerticalDeviderShown: false}} isDocSign/>
-      <MapStateListElement mapState={{...selectedMapState2, isVerticalDeviderShown: false, isViewed: false, isFavorite: false, isHome: false}} isDocSign/>
-      <MapStateListElement mapState={{...selectedMapState3, isVerticalDeviderShown: false}} isDocSign={false}/>
+      <div className={Style.wrapper} style={{width: '55rem', alignItems: 'center'}}>
+        <SortableList<MapStateEntity> unsortedItems={[{...selectedMapState, isVerticalDeviderShown: false}, {...selectedMapState2, isVerticalDeviderShown: false, isViewed: false, isFavorite: false, isHome: false}, {...selectedMapState3, isVerticalDeviderShown: false}, selectedMapState4]}
+        getItemComponent={(mapState) => <MapStateListElement mapState={mapState} isDocSign/>}
+        onDragEnd={(newIndex) => {}}/>
+        {/* //TODO: update new favorite_map_state index in the db; */}
       </div>
       <button className={Style.saveStateButton}>שמירה וניהול מצבים</button>
       {/*eveything else needed for this button already exists in ts (border, icon with plus) */}

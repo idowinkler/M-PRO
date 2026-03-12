@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.grabButton {
+    cursor: grab;
+    padding: 0 0.625rem;
+    font-size: 2rem;
+    color: rgba(189, 189, 189, 1);
+}
