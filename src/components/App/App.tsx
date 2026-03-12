@@ -54,10 +54,10 @@ isViewed: true,
       {/* To the my map item we only need to add the switcher, cause everything else exists in the realitiesSelection component.*/}
 
       <div className={Style.wrapper} style={{width: '23.75rem'}}>
-      <MapStateBar mapState={selectedMapState4} />
       <MapStateBar mapState={selectedMapState} />
       <MapStateBar mapState={selectedMapState2} />
       <MapStateBar mapState={selectedMapState3} />
+      <MapStateBar mapState={selectedMapState4} />
       </div>
       <div className={Style.wrapper} style={{width: '55rem'}}>
       <MapStateListElement mapState={{...selectedMapState, isVerticalDeviderShown: false}} isDocSign/>

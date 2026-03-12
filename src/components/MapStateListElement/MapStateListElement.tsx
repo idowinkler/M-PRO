@@ -15,7 +15,7 @@ const MapStateListElement:React.FC<MapStateListElementProps> = ({mapState, isDoc
         <MapStateBar mapState={mapState}/>
         <VerticalDivider />
         
-        <div className={Style.creationDetails}>{mapState.isMyMap ? 'מפה ראשית' : <div className={Style.creator}><p className={Style.creatorName}>יוצר: מסריחולי הגדול  ביותר מכולם בעולם</p>ב 24.07.12, 12:15</div>}</div>
+        <div>{mapState.isMyMap ? 'מפה ראשית' : <div className={Style.creator}><p className={Style.creatorName}>יוצר: מסריחולי הגדול  ביותר מכולם בעולם</p>ב 24.07.12, 12:15</div>}</div>
         {isDocSign && <img src={docIcon} className={Style.docIcon}/>}
     </div>
 

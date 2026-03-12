@@ -1,6 +1,8 @@
 import React from "react";
 import { MapStateEntity } from "../../types/MapStateEntity";
 import homeIcon from "../../assets/home.svg";
+import usersIcon from '../../assets/users.svg';
+import hollowHeartIcon from '../../assets/hollowHeart.svg';
 import Bar from "../Bar/Bar";
 import VerticalDivider from "../VerticalDivider/VerticalDivider";
 import UnviewedEntityIndicator from "../UnviewedEntityIndicator/UnviewedEntityIndicator";
@@ -11,20 +13,25 @@ export interface MapStateBarProps {
 }
 
 export const MapStateBar: React.FC<MapStateBarProps> = ({ mapState }) => {
-  const nonMyMapIconClass = `${Style.favoriteIcon} ${
+  const selectedMapStateClass = `${Style.heartIcon} ${
             mapState.isFavorite ? Style.favorite : ''
-          } ${mapState.isHome ? Style.homeFavoriteIcon : ''}`
+          } ${mapState.isHome ? Style.home : ''}`;
+  const icon = mapState.isMyMap ? usersIcon : hollowHeartIcon;
 
   return <Bar>      
             <div className={Style.mapStateInfo}>
-                <div className={mapState.isMyMap ? Style.usersIcon : nonMyMapIconClass} />                
+                <button>
+                  <img src={icon} className={mapState.isMyMap ? Style.usersIcon : selectedMapStateClass}>
+                  </img>
+                </button> 
+                {/*TODO: switch to IconButton */}               
                 {mapState.isVerticalDeviderShown && <VerticalDivider />}
                 
                 {!mapState.isViewed && <UnviewedEntityIndicator />}
                 <div className={Style.name}>{mapState.name}</div>
             </div>
 
-            {mapState.isHome && <img src={homeIcon} className={Style.icon} />}
+            {mapState.isHome && <img src={homeIcon} />}
         </Bar>
 }
 ;

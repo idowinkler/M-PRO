@@ -15,9 +15,8 @@
   gap: 0 0.9rem
 }
 
-.favoriteIcon {
+.heartIcon {
   cursor: pointer;
-  background-image: url("../../assets/hollowHeart.svg");
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: 0.13rem;
@@ -26,19 +25,15 @@
   cursor: pointer;
 }
 
-.favoriteIcon:hover {
-  background-image: url("../../assets/filledHeart.svg");
+.heartIcon.favorite:not(:hover),
+.heartIcon:hover
+ {
+ background-image: url('../../assets/filledHeart.svg');
 }
 
-.favoriteIcon.favorite {
-  background-image: url("../../assets/filledHeart.svg");
-}
 
-.favoriteIcon.favorite:hover {
-  background-image: url("../../assets/hollowHeart.svg");
-}
 
-.favoriteIcon.homeFavoriteIcon {
+.heartIcon.home {
   opacity: 0.4;
 }
 
