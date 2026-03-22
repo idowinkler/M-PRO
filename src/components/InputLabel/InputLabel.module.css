@@ -1,0 +1,16 @@
+.labelWrapper {
+  position: absolute;
+  top: -0.625rem;
+  right: 0.625rem;
+  padding: 0.1875rem 0.375rem;
+  background: linear-gradient(to bottom, #4f5b68 0%, #485461 100%);
+  z-index: 2;
+}
+
+.labelText {
+  color: #a0aec0;
+  font-size: 12px;
+  font-weight: 400;
+  display: block;
+  line-height: 1;
+}

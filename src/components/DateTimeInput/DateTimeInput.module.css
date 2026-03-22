@@ -1,0 +1,28 @@
+/* TODO: general for css - use our colors */
+.wrapper {
+  position: relative;
+  margin-top: 0.625rem;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  height: 2.75rem;
+  padding: 0 0.75rem;
+  border-radius: 0.375rem;
+  border: 0.0625rem solid #687b96;
+  background-color: rgba(123, 136, 149, 0.3);
+  cursor: pointer;
+}
+
+.inputContainer:hover {
+  border-color: #8a9bb0;
+  background-color: rgba(123, 136, 149, 0.38);
+}
+
+.formattedText {
+  font-size: 1rem;
+  font-weight: 400;
+}
