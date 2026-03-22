@@ -31,6 +31,7 @@ const OptimalPlanningModal: React.FC<OptimalPlanningModalProps> = ({ isOpen, onC
             <DateTimeInput label='מ' date={timeWindowStart} onChange={setTimeWindowStart} />
             <DateTimeInput label='עד' date={timeWindowEnd} onChange={setTimeWindowEnd} />
           </div>
+          {/* //TODO: REPLACE DIVIDERS WITH OUR DIVIDERS */}
           <div className={styles.divider} />
         </div>
       </div>

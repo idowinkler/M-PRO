@@ -1,26 +1,7 @@
+/* TODO: general for css - use our colors */
 .wrapper {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
   margin-top: 0.625rem;
-}
-
-.labelWrapper {
-  position: absolute;
-  top: -0.625rem;
-  right: 0.625rem;
-  padding: 0.1875rem 0.375rem;
-  background: linear-gradient(to bottom, #4f5b68 0%, #485461 100%);
-  z-index: 2;
-}
-
-.labelText {
-  color: #a0aec0;
-  font-size: 12px;
-  font-weight: 400;
-  display: block;
-  line-height: 1;
 }
 
 .inputContainer {
@@ -34,10 +15,6 @@
   border: 0.0625rem solid #687b96;
   background-color: rgba(123, 136, 149, 0.3);
   cursor: pointer;
-  transition:
-    border-color 0.2s,
-    background-color 0.2s;
-  position: relative;
 }
 
 .inputContainer:hover {
@@ -45,25 +22,7 @@
   background-color: rgba(123, 136, 149, 0.38);
 }
 
-.calendarIcon {
-  width: 1.125rem;
-  height: 1.125rem;
-}
-
 .formattedText {
   font-size: 1rem;
   font-weight: 400;
-  text-align: right;
-  direction: ltr;
-  unicode-bidi: plaintext;
-}
-
-.hiddenInput {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-  pointer-events: none;
-  visibility: hidden;
-  color-scheme: dark;
 }

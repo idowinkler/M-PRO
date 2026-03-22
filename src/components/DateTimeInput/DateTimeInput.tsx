@@ -1,6 +1,9 @@
-import React, { useRef } from 'react';
-import styles from './DateTimeInput.module.css';
+import { useState } from 'react';
 import calenderIcon from '../../assets/calender.svg';
+import Styles from './DateTimeInput.module.css';
+import InputLabel from '../InputLabel/InputLabel';
+import CalendarPicker from './CalendarPicker/CalendarPicker';
+import { addLeadingZero } from '../../utils/stringUtils';
 
 interface DateTimeInputProps {
   label?: string;
@@ -9,21 +12,22 @@ interface DateTimeInputProps {
 }
 
 const DateTimeInput: React.FC<DateTimeInputProps> = ({ label, date: value, onChange }) => {
-  const inputRef = useRef<HTMLInputElement>(null);
+  const [showDatePicker, setShowDatePicker] = useState(false);
 
-  const handleContainerClick = () => {
-    inputRef.current?.showPicker();
+  const onClick = () => {
+    setShowDatePicker(true);
   };
 
-  const addLeadingZero = (n: number) => n.toString().padStart(2, '0');
-
-  const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    const date = value ? new Date(value) : undefined;
+  const handleSave = (date: Date) => {
     onChange?.(date);
+    setShowDatePicker(false);
   };
 
-  const formatDisplayValue = (date?: Date) => {
+  const handleCancel = () => {
+    setShowDatePicker(false);
+  };
+
+  const formatDateDisplay = (date?: Date) => {
     if (!date) {
       return 'hh:mm ב dd/mm/yyyy';
     }
@@ -36,32 +40,25 @@ const DateTimeInput: React.FC<DateTimeInputProps> = ({ label, date: value, onCha
       const minutes = addLeadingZero(date.getMinutes());
 
       return `${day}/${month}/${year} ב ${hours}:${minutes}`;
-    } catch (e) {
-      console.log('Error formatting date:', e);
-
+    } catch (formattingError) {
+      //TODO: use our error handling
+      console.log('Error formatting date:', formattingError);
       return '';
     }
   };
 
-  return (
-    <div className={styles.wrapper}>
-      {label && (
-        <div className={styles.labelWrapper}>
-          <span className={styles.labelText}>{label}</span>
-        </div>
-      )}
+  //TODO: use our onClickOutside hook if needed
 
-      <div className={styles.inputContainer} onClick={handleContainerClick}>
-        <img src={calenderIcon} className={styles.calendarIcon} />
-        <div className={styles.formattedText}>{formatDisplayValue(value)}</div>
-        <input
-          ref={inputRef}
-          type='datetime-local'
-          className={styles.hiddenInput}
-          value={value ? value.toISOString().slice(0, 16) : ''}
-          onChange={handleDateChange}
-        />
+  return (
+    <div className={Styles.wrapper}>
+      {label && <InputLabel label={label} />}
+      <div className={Styles.inputContainer} onClick={onClick}>
+        <img src={calenderIcon} />
+        <div className={Styles.formattedText}>{formatDateDisplay(value)}</div>
       </div>
+      {showDatePicker && (
+        <CalendarPicker initialValue={value} onSave={handleSave} onCancel={handleCancel} />
+      )}
     </div>
   );
 };

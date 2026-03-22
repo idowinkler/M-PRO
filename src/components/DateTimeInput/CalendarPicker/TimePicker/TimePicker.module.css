@@ -1,0 +1,42 @@
+.timeContainer {
+  margin-top: 0.75rem;
+  position: relative;
+}
+
+.timeContainer input {
+  height: 40px;
+  background-color: rgba(123, 136, 149, 0.3);
+  border: 1px solid #687b96;
+  border-radius: 8px;
+  padding: 0 2px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: right;
+}
+
+.timeContainer input::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.timeContainer input:hover,
+.timeContainer input:focus {
+  border-color: #8a9bb0;
+  background-color: rgba(123, 136, 149, 0.45);
+  cursor: pointer;
+}
+
+.timeLabel {
+  position: absolute;
+  right: 0.7rem;
+  top: -0.6rem;
+  z-index: 2;
+  font-size: 0.7rem;
+  color: #ffffff;
+  background: linear-gradient(180deg, #4f5b68 0%, #49535f 100%);
+  border-radius: 0.25rem;
+  padding: 0.125rem 0.25rem;
+  height: 18px;
+  line-height: 18px;
+  display: inline-flex;
+  align-items: center;
+}

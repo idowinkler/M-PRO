@@ -1,0 +1,46 @@
+.popupHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.popupTitle {
+  font-size: 0.95rem;
+}
+
+.navButton {
+  cursor: pointer;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 2.1rem);
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+  text-align: center;
+  justify-content: center;
+}
+
+.daysGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 2rem);
+  gap: 0.1rem;
+  justify-content: center;
+}
+
+.day,
+.dayEmpty {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.daySelected {
+  background-color: #2caeba;
+  border-radius: 50%;
+}

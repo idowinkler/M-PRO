@@ -1,0 +1,40 @@
+.popup {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  margin-top: 0;
+  width: 16.8rem;
+  background: linear-gradient(180deg, #4a5664 0%, #16202f 100%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0.75rem;
+  padding: 0.85rem;
+  z-index: 5;
+  color: #ffffff;
+  direction: ltr;
+  box-sizing: border-box;
+}
+
+.popupActions {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancelButton,
+.saveButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.cancelButton {
+  background: transparent;
+  color: #ffffff;
+}
+
+.saveButton {
+  background: #2caeba;
+  color: #ffffff;
+}
