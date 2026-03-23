@@ -1,8 +1,18 @@
 .container {
     display: flex;
     flex-direction: column;
-    width: 25rem;
-    border-radius: 14px;
-    gap: 20px;
+    width: 23.1875rem;
+    gap: .75rem;
     max-width: 100%;
+}
+
+.title {
+   font-weight: 500;
+   font-size: 1rem;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
 }

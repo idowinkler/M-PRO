@@ -26,6 +26,12 @@
   font-size: 1.25rem;
   border-radius: 14px;
   border-width: 3px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.modalContent::-webkit-scrollbar {
+  display: none;
 }
 
 .open {
