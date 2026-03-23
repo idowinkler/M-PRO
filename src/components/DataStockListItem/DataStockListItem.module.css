@@ -26,57 +26,14 @@
   cursor: pointer;
   background-color: transparent;
   accent-color: #00c8b4;
+  flex-shrink: 0;
 }
 
 .stockLabel {
-  /* much better in my opinnion */
   font-size: .90rem;
   text-align: right;
   margin: 0;
-}
-
-.percentContainer {
-  position: relative;
-  display: inline-block;
-}
-
-.percentageInput {
-  display: flex;
-  background-color: rgba(123, 136, 149, 0.3);
-  border: 1px solid rgba(104, 123, 150, 1);
-  align-items: center;
-  min-width: 0;
-  /* background-color: transparent; */
-  border-radius: 4px;
-
-  /* things from outside */
-  padding: 0.5rem 1.3rem 0.5rem 0.5rem;
-  height: 2.1875rem;
-  width: 5.5rem;
-  text-align: right;
-  
-  font-size: 1rem;
-  
-  /* direction: ltr; */
-}
-
-.percentageInput:disabled {
-  height: 1.25rem;
-  padding: 0;
-}
-
-.percentageInput:focus {
-  outline: none;
-  border: none;
-  box-shadow: none;
-}
-
-.percentageSymbol {
-  position: absolute;
-  top: 50%;
-  right: 0.5rem;
-  transform: translateY(-50%);
-  font-size: 1rem;
+  word-break: break-word;
 }
 
 .settingsIcon {
