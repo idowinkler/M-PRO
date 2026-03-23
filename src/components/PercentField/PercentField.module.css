@@ -1,0 +1,26 @@
+.percentContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.percentInput {
+  padding: 0.5rem 1.3rem 0.5rem 0.5rem;
+  height: 2.1875rem;
+  width: 5.5rem;
+  text-align: right;
+  font-size: 1rem;
+}
+
+.disabledPercentInput {
+  height: 1.25rem;
+  padding: 0;
+  width: 5.5rem;
+}
+
+.percentageSymbol {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  font-size: 1rem;
+}

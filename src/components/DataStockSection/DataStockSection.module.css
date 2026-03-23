@@ -1,0 +1,4 @@
+.dataStocksContainer {
+  display: flex;
+  flex-direction: column;
+}
